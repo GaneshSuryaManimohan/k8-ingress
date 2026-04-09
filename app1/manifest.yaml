@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: app1
-          image: tgsmanimohan/app1:1.0
+          image: tgsmanimohan/app1:1.1
           ports:
             - containerPort: 80
 ---
