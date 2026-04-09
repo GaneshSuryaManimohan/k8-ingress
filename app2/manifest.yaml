@@ -46,6 +46,7 @@ metadata:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/tags: Environment=dev,Team=test
+    #this annotation is useful to keep one ALB under the group
     alb.ingress.kubernetes.io/group.name: my-team.awesome-group
     alb.ingress.kubernetes.io/healthcheck-path: /health
 spec:
