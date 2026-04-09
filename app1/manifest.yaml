@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app1
+  # these are deployment level labels, they are not used for selecting pods, but can be useful for organizing and managing deployments
+  labels:
+    app: app1
+    purpose: ingress-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app1
+      purpose: ingress-demo
+  # the template section defines the pod template that will be used to create pods for this deployment
+  template:
+    metadata:
+      labels:
+        app: app1
+        purpose: ingress-demo
+    spec:
+      containers:
+        - name: app1
+          image: tgsmanimohan/app1:1.0
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+spec:
+  selector:
+    app: app1
+    purpose: ingress-demo
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
