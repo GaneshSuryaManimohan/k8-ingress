@@ -1,3 +1,5 @@
-FROM nginx
-RUN rm -rf /usr/share/nginx/html/index.html
-RUN echo "<h1>Hello, this is from APP-2</h1>" > /usr/share/nginx/html/nginx.html
+FROM nginx:alpine
+
+#Create a custom index.html and health file for app1
+COPY index.html /usr/share/nginx/html/index.html
+COPY health /usr/share/nginx/html/health
