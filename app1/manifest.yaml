@@ -45,8 +45,8 @@ metadata:
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/tags: Environment=dev,Team=test
     alb.ingress.kubernetes.io/group.name: my-team.awesome-group
-    kubernetes.io/ingress.class: alb
 spec:
+  ingressClassName: alb
   rules:
   - host: "app1.surya-devops.site"
     http:
